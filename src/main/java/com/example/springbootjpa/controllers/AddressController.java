@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-
 import java.util.Optional;
 
 @Controller
@@ -29,6 +27,8 @@ public class AddressController {
     @ResponseBody
     public String getAddress(@RequestParam Integer id){
         Optional<Address> address = repo.findById(id);
+        System.out.println(repo.findByFullName("Harshal"));
+        System.out.println(repo.findByIdGreaterThan(0));
         System.out.println(address);
         return "Hello Brother";
     }
